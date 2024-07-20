@@ -4,15 +4,11 @@
 <div class="flex items-center justify-between">
 
  {% unblocklifelogo  as logo %}
-<div class="mx-10 grid grid-cols-2 w-96">
-<div> 
-<a href="/">
-{% image  logo.logo  fill-256x256 class="" %}
-</a>
-</div> 
-<div class="flex items-center justify-center text-2xl font-bold"> 
-<span> Mutual Life </span> 
-</div>
+<div class="w-96"> 
+    <a class="flex items-center" href="/">
+        {% image logo.logo max-96x96 format-webp class="mr-4 w-8 h-8" %}
+        <span class="text-2xl font-bold">Mutual Life</span> 
+    </a> 
 </div>
 <button class="focus-visible:ring-none menu-btn block lg:hidden">
 <span class="relative transition duration-200 w-8 h-0.5 bg-gray-700 block my-[6px]"></span>
