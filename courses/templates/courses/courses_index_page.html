@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+
+<div class="h-28"></div> 
+
+<section id="blog" class="text-gray-700 body-font border-t border-gray-200">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900"> {{ page.title }} </h1>
+            <p class="lg:w-1/2 w-full leading-relaxed text-base"> {{ page.summary }} </p>
+
+        </div>
+        <div class="flex flex-wrap -m-4">
+        {% for post in course_entries %}
+    
+            <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-300 p-6 rounded-lg">
+                              
+                    {% image post.feed_image fill-840x240 as img %}
+
+
+                    <div
+                        class="w-full inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-4">
+                        <img class="object-cover object-center h-full w-full" src="{{img.url}}">
+                    </div>
+                    <div>
+                        <h2 class="text-2xl text-gray-900 font-medium title-font mb-2"> {{ post.title }} </h2>
+                        <p></p>
+                        <p class="leading-relaxed text-lg"> {{ post.specific.summary }}</p>
+                        <a href="{% pageurl post %}"  class="mt-3 text-green-500 inline-flex items-center text-xl">Read More
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+ 
+        </div>
+
+    </div>
+</section>
+
+
+{% endblock %}
+
+

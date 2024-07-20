@@ -1,0 +1,40 @@
+{% load static  wagtailimages_tags unblocklife_tags %}
+<nav class="header bg-white w-full top-0 left-0 z-20 fixed shadow-md">
+<div class="container mx-auto px-3 relative">
+<div class="flex items-center justify-between">
+
+ {% unblocklifelogo  as logo %}
+<div class="mx-10 grid grid-cols-2 w-96">
+<div> 
+<a href="/">
+{% image  logo.logo  fill-256x256 class="" %}
+</a>
+</div> 
+<div class="flex items-center justify-center text-2xl font-bold"> 
+<span> Mutual Life </span> 
+</div>
+</div>
+<button class="focus-visible:ring-none menu-btn block lg:hidden">
+<span class="relative transition duration-200 w-8 h-0.5 bg-gray-700 block my-[6px]"></span>
+<span class="relative transition duration-200 w-8 h-0.5 bg-gray-700 block my-[6px]"></span>
+<span class="relative transition duration-200 w-8 h-0.5 bg-gray-700 block my-[6px]"></span>
+</button>
+<nav class="nav-box w-64 lg:w-full px-6 lg:px-3 absolute right-0 top-full bg-white hidden lg:block lg:static shadow-lg lg:shadow-none rounded lg:rounded-none py-6">
+<ul class="lg:flex justify-end">
+<li>
+<a href="/" class="text-gray-600 text-md hover:text-red-600 block py-2 lg:py-0 lg:ml-10 text-red-500">Home</a>
+</li>
+<li>
+<a href="/about" class="text-gray-600 text-md hover:text-red-600 block py-2 lg:py-0 lg:ml-10">About</a>
+</li>
+<li>
+<a href="/contact" class="text-gray-600 text-md hover:text-red-600 block py-2 lg:py-0 lg:ml-10">Contact</a>
+</li>
+<li>
+<a href="/courses" class="text-gray-600 text-md hover:text-red-600 block py-2 lg:py-0 lg:ml-10">Courses</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</nav>

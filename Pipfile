@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+tzdata = "*"  # Fixes "zoneinfo._common.ZoneInfoNotFoundError" on docker server
+wagtail = "*"
+whitenoise = "*"
+
+[dev-packages]
+black = "*"
+flake8 = "*"
+isort = "*"
+
+[requires]
+python_version = "3.10"

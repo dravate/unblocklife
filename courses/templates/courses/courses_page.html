@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+{% load wagtailcore_tags wagtailimages_tags %}
+<div class="h-10"></div> 
+<div class="flex justify-center items-center"> 
+{% image page.feed_image fill-840x240 as img %}
+<img src='{{ img.url }}' alt='#' class="p-4 rounded rounded-lg" />
+
+</div>
+
+<div class="w-full flex justify-center items-center px-2 sm:px-10 md:px-24"> 
+        <div class="pt-24"> 
+            <h1 class="mb-4 text-2xl md:text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl px-4 ">{{ page.title }} </h1>
+            <div class=" grid grid-cols-1 gap-4">  
+                <p class="text-sm dark:text-gray-600 px-4 mb-4 md:mb-0">by
+			<a rel="noopener noreferrer" href="#" target="_blank" class="underline dark:text-violet-600">
+				<span itemprop="name">{{ page.author }}</span>
+			</a>on
+			<time datetime="2021-02-12 15:34:18-0200"> {{ page.date }} </time>
+		</p>
+               <div class=" border-2 border-dotted rounded rounded-lg shadow shadow-lg md:mt-0 w-full md:w-3/4">
+               <p class="font-bold border-b-2 border-gray-400 text-2xl"> Schedule </p> 
+               <p> Start Date:   <time datetime="2021-02-12 15:34:18-0200"> {{ page.start_date }} </time> </p> 
+               <p> End Date:   <time datetime="2021-02-12 15:34:18-0200"> {{ page.end_date }} </time> </p> 
+               </div> 
+           </div> 
+
+        <div class="pt-4"> 
+{% for trainer in page.trainers %}
+   <div class="px-4 md:px-0"> {{ trainer }} </div>
+{% endfor %}
+
+       </div> 
+
+<div class="h-32"></div> 
+
+
+{% for block in page.body %}
+   <div class="md:px-0"> {{ block }} </div> 
+{% endfor %}
+
+<hr> 
+
+{% if page.get_tags %}
+                     <h3 class="my-4 font-bold">Find more blog posts with similar tags</h3>
+                    <div class="">
+                        {% for tag in page.get_tags %}
+                           <span class="border-2 rounded rounded-3xl p-4 inline-flex items-baseline"> <svg xmlns="http://www.w3.org/2000/svg" class="pt-2 pr-2" width="24px" height="24px"  viewBox="0 0 24 24" fill="currentColor"><path d="M10.9042 2.10025L20.8037 3.51446L22.2179 13.414L13.0255 22.6063C12.635 22.9969 12.0019 22.9969 11.6113 22.6063L1.71184 12.7069C1.32131 12.3163 1.32131 11.6832 1.71184 11.2926L10.9042 2.10025ZM11.6113 4.22157L3.83316 11.9997L12.3184 20.485L20.0966 12.7069L19.036 5.28223L11.6113 4.22157ZM13.7327 10.5855C12.9516 9.80448 12.9516 8.53815 13.7327 7.7571C14.5137 6.97606 15.78 6.97606 16.5611 7.7571C17.3421 8.53815 17.3421 9.80448 16.5611 10.5855C15.78 11.3666 14.5137 11.3666 13.7327 10.5855Z"></path></svg> 
+<a href="{{ tag.url }}" class="blog-tags__pill">{{ tag }}</a> </span>
+                        {% endfor %}
+                  </div>
+{% endif %}
+
+
+
+           <div class="w-full relative pt-10"> 
+              <div class="absolute right-4 bg-gray-400 hover:bg-gray-800  hover:text-white p-4 rounded rounded-lg">
+                    <a rel="noopener noreferrer" href="{{ page.get_parent.url }}" class="flex items-center justify-between w-full">
+		 	<span class="text-xs font-bold tracking-wider uppercase">Return to Courses</span>
+			<svg viewBox="0 0 24 24" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4 stroke-current dark:text-violet-600">
+			<line x1="5" y1="12" x2="19" y2="12"></line>
+			<polyline points="12 5 19 12 12 19"></polyline>
+			</svg>
+		</a>
+           </div> 
+  
+
+<hr> 
+<div class="h-10"></div>  
+
+{% endblock content %}
+
