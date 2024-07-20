@@ -41,6 +41,13 @@ python manage.py runsever
 You can access the site at ```http://localhost:8000``` 
 
 
+## TODO 
+
+1. Company Name should come from  Settings->Site Settings field  
+2. Our Services should come from Wagtail Pages Model. We can define that as part of HomePage or separate Model. 
+3. Get Footer into Model.  
+4. Responsive - add Vue3 or React or Alpinejs to click and expand Menu on mobile device 
+
 
 
 
