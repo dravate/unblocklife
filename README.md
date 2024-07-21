@@ -51,7 +51,7 @@ You can access the site at ```http://localhost:8000```
 
 ## Example - Look & Feel 
 
-![unblock life][https://github.com/dravate/unblocklife/blob/main/unblocklife_dot_in.gif]
+![unblock life](./unblocklife_dot_in.gif)
 
 
 
