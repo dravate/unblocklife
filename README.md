@@ -49,7 +49,9 @@ You can access the site at ```http://localhost:8000```
 4. Responsive - add Vue3 or React or Alpinejs to click and expand Menu on mobile device 
 
 
+## Example - Look & Feel 
 
+![unblock life][unblocklife_dot_in.gif]
 
 
 
